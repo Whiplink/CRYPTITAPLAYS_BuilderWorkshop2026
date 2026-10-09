@@ -1,20 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
-import { networkLabel, objectId } from '../config';
-import { mapBuilderCard } from '../lib/mapBuilderCard';
-import { suiClient } from '../lib/suiClient';
+import { networkLabel, objectId } from "../config";
+import { mapBuilderCard } from "../lib/mapBuilderCard";
+import { suiClient } from "../lib/suiClient";
 
 import type {
   BuilderCardView,
   PortfolioStatus,
   UsePortfolioResult,
-} from '../types';
+} from "../types";
 
-const BUILDER_CARD_TYPE_SUFFIX = '::builder_card::BuilderCard';
+const BUILDER_CARD_TYPE_SUFFIX = "::builder_card::BuilderCard";
 
 export function usePortfolio(): UsePortfolioResult {
   const [status, setStatus] = useState<PortfolioStatus>(() =>
-    objectId ? 'loading' : 'empty',
+    objectId ? "loading" : "empty",
   );
 
   const [data, setData] = useState<BuilderCardView | null>(null);
@@ -22,7 +22,7 @@ export function usePortfolio(): UsePortfolioResult {
 
   useEffect(() => {
     if (!objectId) {
-      setStatus('empty');
+      setStatus("empty");
       setData(null);
       setError(null);
       return;
@@ -31,7 +31,7 @@ export function usePortfolio(): UsePortfolioResult {
     let cancelled = false;
 
     async function loadPortfolio() {
-      setStatus('loading');
+      setStatus("loading");
       setData(null);
       setError(null);
 
@@ -48,18 +48,18 @@ export function usePortfolio(): UsePortfolioResult {
         const object = response.object;
 
         if (!object) {
-          throw new Error('BuilderCard object not found.');
+          throw new Error("BuilderCard object not found.");
         }
 
         if (!object.type?.endsWith(BUILDER_CARD_TYPE_SUFFIX)) {
           throw new Error(
-            `Unexpected object type: ${object.type ?? 'unknown'}`,
+            `Unexpected object type: ${object.type ?? "unknown"}`,
           );
         }
 
-        if (!object.json || typeof object.json !== 'object') {
+        if (!object.json || typeof object.json !== "object") {
           throw new Error(
-            'BuilderCard object does not contain readable JSON fields.',
+            "BuilderCard object does not contain readable JSON fields.",
           );
         }
 
@@ -73,18 +73,18 @@ export function usePortfolio(): UsePortfolioResult {
         );
 
         setData(view);
-        setStatus('success');
+        setStatus("success");
       } catch (fetchError) {
         if (cancelled) return;
 
-        console.error('Failed to load BuilderCard:', fetchError);
+        console.error("Failed to load BuilderCard:", fetchError);
 
-        setStatus('error');
+        setStatus("error");
 
         setError(
           fetchError instanceof Error
             ? fetchError.message
-            : 'Could not load on-chain data.',
+            : "Could not load on-chain data.",
         );
       }
     }

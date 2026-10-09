@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
-import CardPhotoExport from './components/CardPhotoExport';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import MoltenMetal from './components/MoltenMetal';
-import ProfileCard from './components/ProfileCard';
-import SocialActions from './components/SocialActions';
-import { usePortfolio } from './hooks/usePortfolio';
-import campusImage from './assets/campus.jpg';
+import { useEffect, useRef, useState, type RefObject } from "react";
+import CardPhotoExport from "./components/CardPhotoExport";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import MoltenMetal from "./components/MoltenMetal";
+import ProfileCard from "./components/ProfileCard";
+import SocialActions from "./components/SocialActions";
+import { usePortfolio } from "./hooks/usePortfolio";
+import campusImage from "./assets/campus.jpg";
 
 const CARD_WIDTH = 1020;
 const CARD_ASPECT = 1.56;
@@ -32,7 +32,10 @@ function useCardLayout(
   const [scale, setScale] = useState(1);
   const [stackWidth, setStackWidth] = useState(CARD_WIDTH);
   const [stackHeight, setStackHeight] = useState(FALLBACK_STACK_HEIGHT);
-  const [stageInsets, setStageInsets] = useState<StageInsets>({ top: 56, bottom: 56 });
+  const [stageInsets, setStageInsets] = useState<StageInsets>({
+    top: 56,
+    bottom: 56,
+  });
 
   useEffect(() => {
     const updateLayout = () => {
@@ -43,7 +46,8 @@ function useCardLayout(
       const stage = stageRef.current;
       if (!stage) return;
 
-      const measuredStackHeight = stackRef.current?.offsetHeight ?? FALLBACK_STACK_HEIGHT;
+      const measuredStackHeight =
+        stackRef.current?.offsetHeight ?? FALLBACK_STACK_HEIGHT;
       setStackHeight(measuredStackHeight);
       const measuredStackWidth = stackRef.current?.offsetWidth ?? CARD_WIDTH;
       setStackWidth(measuredStackWidth);
@@ -61,21 +65,26 @@ function useCardLayout(
 
     updateLayout();
 
-    const observed = [stageRef.current, stackRef.current, headerRef.current, footerRef.current].filter(Boolean);
+    const observed = [
+      stageRef.current,
+      stackRef.current,
+      headerRef.current,
+      footerRef.current,
+    ].filter(Boolean);
     const ro = new ResizeObserver(updateLayout);
     for (const node of observed) {
       if (node) ro.observe(node);
     }
 
-    window.addEventListener('resize', updateLayout);
-    window.visualViewport?.addEventListener('resize', updateLayout);
-    window.visualViewport?.addEventListener('scroll', updateLayout);
+    window.addEventListener("resize", updateLayout);
+    window.visualViewport?.addEventListener("resize", updateLayout);
+    window.visualViewport?.addEventListener("scroll", updateLayout);
 
     return () => {
       ro.disconnect();
-      window.removeEventListener('resize', updateLayout);
-      window.visualViewport?.removeEventListener('resize', updateLayout);
-      window.visualViewport?.removeEventListener('scroll', updateLayout);
+      window.removeEventListener("resize", updateLayout);
+      window.visualViewport?.removeEventListener("resize", updateLayout);
+      window.visualViewport?.removeEventListener("scroll", updateLayout);
     };
   }, [stageRef, stackRef, headerRef, footerRef]);
 
@@ -88,17 +97,23 @@ export default function App() {
   const stackRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLElement>(null);
-  const { scale, stackWidth, stackHeight, stageInsets } = useCardLayout(stageRef, stackRef, headerRef, footerRef);
+  const { scale, stackWidth, stackHeight, stageInsets } = useCardLayout(
+    stageRef,
+    stackRef,
+    headerRef,
+    footerRef,
+  );
   const [isOrbiting, setIsOrbiting] = useState(false);
 
   useEffect(() => {
-    if (portfolio.status === 'success' && portfolio.data?.fields.builder_name) {
+    if (portfolio.status === "success" && portfolio.data?.fields.builder_name) {
       document.title = `${portfolio.data.fields.builder_name} · Cryptita Plays`;
       return;
     }
-    document.title = 'Cryptita Plays — Builder Workshop';
+    document.title = "Cryptita Plays — Builder Workshop";
   }, [portfolio.data?.fields.builder_name, portfolio.status]);
 
+  // console.log(portfolio);
   return (
     <div className="app-root">
       <MoltenMetal

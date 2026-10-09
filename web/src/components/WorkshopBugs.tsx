@@ -1,5 +1,5 @@
-import { useState, type CSSProperties, type PointerEvent } from 'react';
-import '../styles/workshop-bugs.css';
+import { useState, type CSSProperties, type PointerEvent } from "react";
+import "../styles/workshop-bugs.css";
 
 type WorkshopBugsProps = {
   motionLocked: boolean;
@@ -8,10 +8,15 @@ type WorkshopBugsProps = {
 // Challenge 1: these guests deliberately return. Remove this component's
 // integration in ProfileCard to evict them permanently; spinning only scares them.
 export function WorkshopBugs({ motionLocked }: WorkshopBugsProps) {
-  const [positions, setPositions] = useState<Record<number, { x: number; y: number }>>({});
+  const [positions, setPositions] = useState<
+    Record<number, { x: number; y: number }>
+  >({});
 
   return (
-    <div className={`workshop-bugs${motionLocked ? ' is-scattered' : ''}`} aria-hidden="true">
+    <div
+      className={`workshop-bugs${motionLocked ? " is-scattered" : ""}`}
+      aria-hidden="true"
+    >
       {[0, 1, 2].map((bug) => (
         <span
           className="workshop-bugs__flight"
@@ -24,16 +29,24 @@ export function WorkshopBugs({ motionLocked }: WorkshopBugsProps) {
             setPositions((previous) => ({
               ...previous,
               [bug]: {
-                x: Math.max(-48, Math.min(48, (previous[bug]?.x ?? 0) + (dx / distance) * 18)),
-                y: Math.max(-48, Math.min(48, (previous[bug]?.y ?? 0) + (dy / distance) * 18)),
+                x: Math.max(
+                  -48,
+                  Math.min(48, (previous[bug]?.x ?? 0) + (dx / distance) * 18),
+                ),
+                y: Math.max(
+                  -48,
+                  Math.min(48, (previous[bug]?.y ?? 0) + (dy / distance) * 18),
+                ),
               },
             }));
           }}
-          style={{
-            translate: `${positions[bug]?.x ?? 0}px ${positions[bug]?.y ?? 0}px`,
-          } as CSSProperties}
+          style={
+            {
+              translate: `${positions[bug]?.x ?? 0}px ${positions[bug]?.y ?? 0}px`,
+            } as CSSProperties
+          }
         >
-          <svg className="workshop-bugs__insect" viewBox="0 0 64 64" focusable="false">
+          {/* <svg className="workshop-bugs__insect" viewBox="0 0 64 64" focusable="false">
             <g fill="none" stroke="#18222b" strokeWidth="3" strokeLinecap="round">
               <path d="M26 28 14 21M25 35 11 35M27 42 16 51M38 28 50 21M39 35 53 35M37 42 48 51" />
               <path d="M28 18 24 10M36 18 40 10" />
@@ -51,7 +64,7 @@ export function WorkshopBugs({ motionLocked }: WorkshopBugsProps) {
                 <circle cx="36" cy="21" r="2.5" fill="#effcff" />
               </g>
             </g>
-          </svg>
+          </svg> */}
         </span>
       ))}
     </div>

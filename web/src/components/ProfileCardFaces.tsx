@@ -1,18 +1,21 @@
-import { siSui } from '../lib/brandIcons';
-import { objectId as configuredObjectId, suiscanObjectUrl } from '../config';
-import { PROFILE_PHOTO_PATH } from '../lib/profilePhoto';
-import type { UsePortfolioResult } from '../types';
-import BrandIcon from './BrandIcon';
-import '../styles/community-partners.css';
-import SCHOOL_LOGO from '../assets/school_logo.webp';
+import { siSui } from "../lib/brandIcons";
+import { objectId as configuredObjectId, suiscanObjectUrl } from "../config";
+import { PROFILE_PHOTO_PATH } from "../lib/profilePhoto";
+import type { UsePortfolioResult } from "../types";
+import BrandIcon from "./BrandIcon";
+import "../styles/community-partners.css";
+import SCHOOL_LOGO from "../assets/school_logo.webp";
 
 export function truncateValue(value: string): string {
-  if (!value) return '—';
+  if (!value) return "—";
   if (value.length <= 14) return value;
   return `${value.slice(0, 6)}…${value.slice(-4)}`;
 }
 
-export function displayOrPlaceholder(value: string | undefined, placeholder: string): string {
+export function displayOrPlaceholder(
+  value: string | undefined,
+  placeholder: string,
+): string {
   return value?.trim() ? value : placeholder;
 }
 
@@ -23,8 +26,8 @@ type CardFaceProps = {
   onPhotoError?: () => void;
   forcePhotoFallback?: boolean;
   photoCrossOrigin?: boolean;
-  copiedField?: 'objectId' | 'owner' | null;
-  onCopy?: (field: 'objectId' | 'owner', value: string) => void;
+  copiedField?: "objectId" | "owner" | null;
+  onCopy?: (field: "objectId" | "owner", value: string) => void;
   backFaceTabIndex?: number;
   backFaceAriaHidden?: boolean;
 };
@@ -41,19 +44,23 @@ export function CardFrontFace({
 }: CardFaceProps) {
   const { status, data, error } = portfolio;
   const fields = data?.fields;
-  const builderName = fields?.builder_name ?? '';
-  const builderNo = fields?.builder_no ?? '';
-  const objectId = data?.objectId ?? '';
-  const owner = data?.owner ?? '';
-  const network = data?.networkLabel ?? '—';
-  const issued = fields?.issued ?? '—';
+  const builderName = fields?.builder_name ?? "";
+  const builderNo = fields?.builder_no ?? "";
+  const objectId = data?.objectId ?? "";
+  const owner = data?.owner ?? "";
+  const network = data?.networkLabel ?? "—";
+  const issued = fields?.issued ?? "—";
   const isActive = Boolean(configuredObjectId);
 
   const placeholderName =
-    status === 'loading' ? 'Loading on-chain profile…' : 'Builder name';
-  const placeholderField = status === 'loading' ? '…' : '—';
+    status === "loading" ? "Loading on-chain profile…" : "Builder name";
+  const placeholderField = status === "loading" ? "…" : "—";
   const credentialUnavailable =
-    status === 'empty' ? 'Not configured' : status === 'error' ? 'Unavailable' : '—';
+    status === "empty"
+      ? "Not configured"
+      : status === "error"
+        ? "Unavailable"
+        : "—";
 
   const renderPhoto = showPhoto && !forcePhotoFallback;
 
@@ -78,9 +85,17 @@ export function CardFrontFace({
           <div className="builder-number-value">
             <strong>{displayOrPlaceholder(builderNo, placeholderField)}</strong>
             <span
-              className={`builder-status-dot${isActive ? ' builder-status-dot--active' : ''}`}
-              aria-label={isActive ? 'On-chain profile active' : 'On-chain profile not configured'}
-              title={isActive ? 'On-chain profile active' : 'Set VITE_PORTFOLIO_OBJECT_ID to activate'}
+              className={`builder-status-dot${isActive ? " builder-status-dot--active" : ""}`}
+              aria-label={
+                isActive
+                  ? "On-chain profile active"
+                  : "On-chain profile not configured"
+              }
+              title={
+                isActive
+                  ? "On-chain profile active"
+                  : "Set VITE_PORTFOLIO_OBJECT_ID to activate"
+              }
             />
           </div>
         </div>
@@ -94,18 +109,23 @@ export function CardFrontFace({
           {renderPhoto ? (
             <img
               src={photoSrc}
-              alt={builderName || 'Builder profile photo'}
+              alt={builderName || "Builder profile photo"}
               className="profile-photo"
-              {...(photoCrossOrigin ? { crossOrigin: 'anonymous' as const } : {})}
+              {...(photoCrossOrigin
+                ? { crossOrigin: "anonymous" as const }
+                : {})}
               onError={onPhotoError}
             />
           ) : (
-            <div className="profile-photo profile-photo--placeholder" aria-hidden="true" />
+            <div
+              className="profile-photo profile-photo--placeholder"
+              aria-hidden="true"
+            />
           )}
         </div>
 
         <div className="profile-details">
-          {status === 'error' && (
+          {status === "error" && (
             <p className="card-status card-status--error" role="alert">
               {error}
             </p>
@@ -120,7 +140,8 @@ export function CardFrontFace({
             <div className="info-field">
               <span className="field-label">PROFESSION</span>
               <span className="field-value">
-                {displayOrPlaceholder(fields?.profession, placeholderField)}
+                {/* {displayOrPlaceholder(fields?.profession, placeholderField)} */}
+                asdqwew
               </span>
             </div>
             <div className="info-field">
@@ -168,7 +189,7 @@ export function CardFrontFace({
           <div className="wide-field skills-field">
             <span className="field-label">SKILLS</span>
             <div className="skills">
-              {status === 'success' && data?.skills.length ? (
+              {status === "success" && data?.skills.length ? (
                 data.skills.map((skill) => <span key={skill}>{skill}</span>)
               ) : (
                 <span className="skills__placeholder">{placeholderField}</span>
@@ -182,21 +203,21 @@ export function CardFrontFace({
         <div className="credential-field">
           <span className="field-label">ISSUED</span>
           <span className="credential-value">
-            {status === 'success' ? issued : credentialUnavailable}
+            {status === "success" ? issued : credentialUnavailable}
           </span>
         </div>
         <div className="divider" />
         <div className="credential-field">
           <span className="field-label">NETWORK</span>
           <span className="credential-value">
-            {status === 'success' ? network : credentialUnavailable}
+            {status === "success" ? network : credentialUnavailable}
           </span>
         </div>
         <div className="divider" />
         <div className="credential-field">
           <span className="field-label">OBJECT ID</span>
           <div className="value-row">
-            {status === 'success' && objectId ? (
+            {status === "success" && objectId ? (
               <a
                 className="value-row__link"
                 href={suiscanObjectUrl(objectId)}
@@ -216,10 +237,10 @@ export function CardFrontFace({
                 disabled={!objectId}
                 onClick={(event) => {
                   event.stopPropagation();
-                  void onCopy('objectId', objectId);
+                  void onCopy("objectId", objectId);
                 }}
               >
-                {copiedField === 'objectId' ? '✓' : '⧉'}
+                {copiedField === "objectId" ? "✓" : "⧉"}
               </button>
             )}
           </div>
@@ -228,7 +249,11 @@ export function CardFrontFace({
         <div className="credential-field">
           <span className="field-label">OWNER</span>
           <div className="value-row">
-            <span>{status === 'success' && owner ? truncateValue(owner) : credentialUnavailable}</span>
+            <span>
+              {status === "success" && owner
+                ? truncateValue(owner)
+                : credentialUnavailable}
+            </span>
             {onCopy && (
               <button
                 className="icon-btn"
@@ -237,10 +262,10 @@ export function CardFrontFace({
                 disabled={!owner}
                 onClick={(event) => {
                   event.stopPropagation();
-                  void onCopy('owner', owner);
+                  void onCopy("owner", owner);
                 }}
               >
-                {copiedField === 'owner' ? '✓' : '⧉'}
+                {copiedField === "owner" ? "✓" : "⧉"}
               </button>
             )}
           </div>
@@ -264,7 +289,10 @@ export function CardBackFace({
   portfolio: _portfolio,
   backFaceTabIndex = 0,
   backFaceAriaHidden = false,
-}: Pick<CardFaceProps, 'portfolio' | 'backFaceTabIndex' | 'backFaceAriaHidden'>) {
+}: Pick<
+  CardFaceProps,
+  "portfolio" | "backFaceTabIndex" | "backFaceAriaHidden"
+>) {
   return (
     <div className="card-side card-back" aria-hidden={backFaceAriaHidden}>
       <div className="material-noise" />
@@ -307,7 +335,10 @@ export function CardBackFace({
               <img src="/assets/icon/cjc-race.svg" alt="CJC Race" />
             </div>
             <div className="community-partner">
-              <img src="/assets/icon/blockchain4youth.svg" alt="Blockchain4Youth" />
+              <img
+                src="/assets/icon/blockchain4youth.svg"
+                alt="Blockchain4Youth"
+              />
             </div>
             <a
               className="community-partner"

@@ -140,8 +140,7 @@ export function CardFrontFace({
             <div className="info-field">
               <span className="field-label">PROFESSION</span>
               <span className="field-value">
-                {/* {displayOrPlaceholder(fields?.profession, placeholderField)} */}
-                asdqwew
+                {displayOrPlaceholder(fields?.profession, placeholderField)}
               </span>
             </div>
             <div className="info-field">

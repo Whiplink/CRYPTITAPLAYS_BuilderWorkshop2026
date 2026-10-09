@@ -213,7 +213,7 @@
 .builder-card-export__card-wrap--back .back-logo-face {
   animation: none;
   background-position: 58% 50%;
-  filter: drop-shadow(0 0 6px rgba(var(--chain-primary-rgb, 77, 162, 255), 0.4));
+  filter: drop-shadow(0 0 6px rgba(var(--chain-primary-rgb, 15, 157, 154), 0.4));
 }
 
 /* Diagonal light streak across the embossed Cryptita character */

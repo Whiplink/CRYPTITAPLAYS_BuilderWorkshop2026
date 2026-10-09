@@ -11,7 +11,6 @@
   --border: rgba(255, 255, 255, 0.08);
 }
 
-
 /* =========================================================
    CARD
    ========================================================= */
@@ -40,7 +39,6 @@
   will-change: transform;
 }
 
-
 /* =========================================================
    CARD MATERIAL
    ========================================================= */
@@ -57,8 +55,7 @@
 
   mix-blend-mode: soft-light;
 
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.22'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.22'/%3E%3C/svg%3E");
 }
 
 .material-light {
@@ -69,16 +66,14 @@
 
   pointer-events: none;
 
-  background:
-    radial-gradient(
-      circle at var(--mx) var(--my),
-      rgba(255, 255, 255, 0.08),
-      transparent 18%
-    );
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.08),
+    transparent 18%
+  );
 
   mix-blend-mode: screen;
 }
-
 
 /* =========================================================
    CRYPTITA DEBOSSED BACKGROUND
@@ -134,9 +129,8 @@
     0.60 - easier to see
   */
 
-opacity: 0.26;
+  opacity: 0.26;
 }
-
 
 /* All three layers use exactly the same SVG */
 
@@ -166,7 +160,6 @@ opacity: 0.26;
   pointer-events: none;
 }
 
-
 /* ---------------------------------------------------------
    DARK RECESSED EDGE
 
@@ -184,7 +177,6 @@ opacity: 0.26;
 
   opacity: 0.9;
 }
-
 
 /* ---------------------------------------------------------
    TINY HIGHLIGHT
@@ -204,7 +196,6 @@ opacity: 0.26;
   opacity: 0.7;
 }
 
-
 /* ---------------------------------------------------------
    RECESSED SURFACE
 
@@ -212,16 +203,14 @@ opacity: 0.26;
    --------------------------------------------------------- */
 
 .deboss-face {
-  background:
-    linear-gradient(
-      145deg,
-      rgba(34, 34, 40, 0.38),
-      rgba(4, 4, 7, 0.52)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(34, 34, 40, 0.38),
+    rgba(4, 4, 7, 0.52)
+  );
 
   opacity: 0.68;
 }
-
 
 /* =========================================================
    HEADER
@@ -263,7 +252,6 @@ opacity: 0.26;
   letter-spacing: 0.04em;
 }
 
-
 /* =========================================================
    SHARED FIELD TYPOGRAPHY
    ========================================================= */
@@ -295,7 +283,6 @@ opacity: 0.26;
 
   line-height: 1.3;
 }
-
 
 /* =========================================================
    BUILDER SERIAL NUMBER
@@ -330,14 +317,13 @@ opacity: 0.26;
 
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      var(--blue) 25%,
-      var(--blue) 75%,
-      transparent
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--blue) 25%,
+    var(--blue) 75%,
+    transparent
+  );
 
   opacity: 0.65;
 }
@@ -379,7 +365,6 @@ opacity: 0.26;
   font-variant-numeric: tabular-nums;
 }
 
-
 /* =========================================================
    MAIN PROFILE
    ========================================================= */
@@ -404,7 +389,6 @@ opacity: 0.26;
   padding: 4px 50px 8px;
 }
 
-
 /* =========================================================
    PHOTO
    ========================================================= */
@@ -418,12 +402,11 @@ opacity: 0.26;
 
   border-radius: 18px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.16),
-      rgba(255, 255, 255, 0.02)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.02)
+  );
 
   box-shadow:
     0 20px 45px rgba(0, 0, 0, 0.32),
@@ -440,7 +423,6 @@ opacity: 0.26;
 
   border-radius: 16px;
 }
-
 
 /* =========================================================
    IDENTITY
@@ -471,7 +453,6 @@ opacity: 0.26;
   letter-spacing: -0.035em;
 }
 
-
 /* =========================================================
    INFORMATION ROWS
    ========================================================= */
@@ -493,7 +474,6 @@ opacity: 0.26;
   min-width: 0;
 }
 
-
 /* =========================================================
    FULL WIDTH FIELDS
    ========================================================= */
@@ -505,7 +485,6 @@ opacity: 0.26;
 .skills-field {
   margin-top: 19px;
 }
-
 
 /* =========================================================
    SKILLS
@@ -523,18 +502,15 @@ opacity: 0.26;
 .skills span {
   padding: 6px 13px;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
 
   border-radius: 999px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.012),
-      rgba(0, 0, 0, 0.08)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.012),
+    rgba(0, 0, 0, 0.08)
+  );
 
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.018),
@@ -545,7 +521,6 @@ opacity: 0.26;
   font-size: 11px;
   font-weight: 500;
 }
-
 
 /* =========================================================
    FLIP BUTTON
@@ -570,12 +545,7 @@ opacity: 0.26;
 
   border-radius: 15px 0 0 15px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #319dff,
-      #48d1e9
-    );
+  background: linear-gradient(135deg, #319dff, #48d1e9);
 
   color: white;
 
@@ -594,9 +564,7 @@ opacity: 0.26;
 }
 
 .flip-btn:hover {
-  transform:
-    translateY(-50%)
-    translateX(-4px);
+  transform: translateY(-50%) translateX(-4px);
 
   filter: brightness(1.08);
 }
@@ -606,7 +574,6 @@ opacity: 0.26;
 
   line-height: 1;
 }
-
 
 /* =========================================================
    ON-CHAIN PANEL
@@ -632,18 +599,15 @@ opacity: 0.26;
 
   align-items: center;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.065);
+  border: 1px solid rgba(255, 255, 255, 0.065);
 
   border-radius: 14px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.018),
-      rgba(0, 0, 0, 0.11)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.018),
+    rgba(0, 0, 0, 0.11)
+  );
 
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.025),
@@ -667,7 +631,6 @@ opacity: 0.26;
 
   letter-spacing: 0.02em;
 }
-
 
 /* =========================================================
    SUI LOGO BOX
@@ -740,7 +703,6 @@ opacity: 0.26;
   transform: scale(1.04);
 }
 
-
 /* =========================================================
    NETWORK
    ========================================================= */
@@ -762,7 +724,6 @@ opacity: 0.26;
 
   font-size: 18px;
 }
-
 
 /* =========================================================
    OBJECT / OWNER
@@ -818,7 +779,6 @@ opacity: 0.26;
   transform: translateY(-1px);
 }
 
-
 /* =========================================================
    DIVIDERS
    ========================================================= */
@@ -827,15 +787,13 @@ opacity: 0.26;
   width: 1px;
   height: 55%;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
 }
-
 
 /* =========================================================
    FLIP SYSTEM
@@ -870,8 +828,6 @@ opacity: 0.26;
   transform: rotateY(180deg);
 }
 
-
-
 /* =========================================================
    BACK  CRYPTITA EMBOSSED LOGO
    ========================================================= */
@@ -902,7 +858,6 @@ opacity: 0.26;
   z-index: 1;
 }
 
-
 /*
   All three layers use your existing Cryptita SVG.
 */
@@ -914,32 +869,22 @@ opacity: 0.26;
 
   inset: 0;
 
-  -webkit-mask-image:
-    url("/assets/icon/cryptita.svg");
+  -webkit-mask-image: url("/assets/icon/cryptita.svg");
 
-  mask-image:
-    url("/assets/icon/cryptita.svg");
+  mask-image: url("/assets/icon/cryptita.svg");
 
-  -webkit-mask-repeat:
-    no-repeat;
+  -webkit-mask-repeat: no-repeat;
 
-  mask-repeat:
-    no-repeat;
+  mask-repeat: no-repeat;
 
-  -webkit-mask-position:
-    center;
+  -webkit-mask-position: center;
 
-  mask-position:
-    center;
+  mask-position: center;
 
-  -webkit-mask-size:
-    contain;
+  -webkit-mask-size: contain;
 
-  mask-size:
-    contain;
+  mask-size: contain;
 }
-
-
 
 /* ---------------------------------------------------------
    EMBOSS SHADOW
@@ -948,57 +893,46 @@ opacity: 0.26;
    --------------------------------------------------------- */
 
 .back-logo-shadow {
-  transform:
-    translate(5px, 5px);
+  transform: translate(5px, 5px);
 
-  background:
-    rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.95);
 
-  filter:
-    blur(2px);
+  filter: blur(2px);
 
   opacity: 0.95;
 }
-
-
 
 /* ---------------------------------------------------------
    EMBOSS UPPER EDGE
    --------------------------------------------------------- */
 
 .back-logo-highlight {
-  transform:
-    translate(-2px, -2px);
+  transform: translate(-2px, -2px);
 
-  background:
-    rgba(115, 195, 255, 0.28);
+  background: rgba(115, 195, 255, 0.28);
 
-  filter:
-    blur(0.4px);
+  filter: blur(0.4px);
 
   opacity: 0.75;
 }
-
-
 
 /* ---------------------------------------------------------
    BLUE RAISED SURFACE
    --------------------------------------------------------- */
 
 .back-logo-face {
-  background:
-    linear-gradient(
-      115deg,
-      #177dcc 0%,
-      #268be2 25%,
-      #43a6f7 42%,
-      #9bd8ff 49%,
-      #ffffff 50%,
-      #84ceff 51%,
-      #43a6f7 58%,
-      #268be2 75%,
-      #177dcc 100%
-    );
+  background: linear-gradient(
+    115deg,
+    #177dcc 0%,
+    #268be2 25%,
+    #43a6f7 42%,
+    #9bd8ff 49%,
+    #ffffff 50%,
+    #84ceff 51%,
+    #43a6f7 58%,
+    #268be2 75%,
+    #177dcc 100%
+  );
 
   background-size: 300% 100%;
   background-position: 100% 50%;
@@ -1017,75 +951,36 @@ opacity: 0.26;
    ========================================================= */
 
 @keyframes cryptita-pulse {
-
   0%,
   20%,
   75%,
   100% {
-
     opacity: 0.82;
 
-    filter:
-      drop-shadow(
-        0 0 2px
-        rgba(66, 165, 255, 0.15)
-      );
+    filter: drop-shadow(0 0 2px rgba(66, 165, 255, 0.15));
   }
-
 
   42% {
-
     opacity: 0.96;
 
-    filter:
-      drop-shadow(
-        0 0 5px
-        rgba(66, 165, 255, 0.55)
-      )
-
-      drop-shadow(
-        0 0 12px
-        rgba(66, 165, 255, 0.25)
-      );
+    filter: drop-shadow(0 0 5px rgba(66, 165, 255, 0.55))
+      drop-shadow(0 0 12px rgba(66, 165, 255, 0.25));
   }
-
 
   50% {
-
     opacity: 1;
 
-    filter:
-      drop-shadow(
-        0 0 7px
-        rgba(82, 183, 255, 0.85)
-      )
-
-      drop-shadow(
-        0 0 18px
-        rgba(66, 165, 255, 0.45)
-      )
-
-      drop-shadow(
-        0 0 35px
-        rgba(66, 165, 255, 0.14)
-      );
+    filter: drop-shadow(0 0 7px rgba(82, 183, 255, 0.85))
+      drop-shadow(0 0 18px rgba(66, 165, 255, 0.45))
+      drop-shadow(0 0 35px rgba(66, 165, 255, 0.14));
   }
-
 
   60% {
-
     opacity: 0.92;
 
-    filter:
-      drop-shadow(
-        0 0 4px
-        rgba(66, 165, 255, 0.35)
-      );
+    filter: drop-shadow(0 0 4px rgba(66, 165, 255, 0.35));
   }
-
 }
-
-
 
 /* =========================================================
    BACK CONTENT
@@ -1105,13 +1000,10 @@ opacity: 0.26;
 
   top: 50%;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   text-align: center;
 }
-
-
 
 /* =========================================================
    BACK BRAND
@@ -1122,12 +1014,7 @@ opacity: 0.26;
 
   color: #fff;
 
-  font-size:
-    clamp(
-      34px,
-      4vw,
-      58px
-    );
+  font-size: clamp(34px, 4vw, 58px);
 
   font-weight: 850;
 
@@ -1136,28 +1023,17 @@ opacity: 0.26;
   letter-spacing: -0.035em;
 }
 
-
 .back-brand p {
-  margin:
-    11px
-    0
-    0;
+  margin: 11px 0 0;
 
   color: var(--blue);
 
-  font-size:
-    clamp(
-      13px,
-      1.5vw,
-      19px
-    );
+  font-size: clamp(13px, 1.5vw, 19px);
 
   font-weight: 750;
 
   letter-spacing: 0.01em;
 }
-
-
 
 /* =========================================================
    BACK HORIZONTAL LINES
@@ -1168,22 +1044,17 @@ opacity: 0.26;
 
   height: 1px;
 
-  margin:
-    38px
-    auto;
+  margin: 38px auto;
 
-  background:
-    linear-gradient(
-      to right,
-      transparent,
-      rgba(66, 165, 255, 0.2),
-      rgba(255, 255, 255, 0.07),
-      rgba(66, 165, 255, 0.2),
-      transparent
-    );
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(66, 165, 255, 0.2),
+    rgba(255, 255, 255, 0.07),
+    rgba(66, 165, 255, 0.2),
+    transparent
+  );
 }
-
-
 
 /* =========================================================
    BUILT ON SUI
@@ -1197,17 +1068,10 @@ opacity: 0.26;
 
   gap: 9px;
 
-  color:
-    rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.88);
 
-  font-size:
-    clamp(
-      17px,
-      1.8vw,
-      23px
-    );
+  font-size: clamp(17px, 1.8vw, 23px);
 }
-
 
 .back-built-on a {
   display: inline-flex;
@@ -1216,8 +1080,7 @@ opacity: 0.26;
 
   gap: 5px;
 
-  color:
-    rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 
   text-decoration: none;
 
@@ -1226,14 +1089,11 @@ opacity: 0.26;
     transform 150ms ease;
 }
 
-
 .back-built-on a:hover {
   opacity: 0.75;
 
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 }
-
 
 .back-built-on img {
   display: block;
@@ -1244,8 +1104,6 @@ opacity: 0.26;
   object-fit: contain;
 }
 
-
-
 /* =========================================================
    COMMUNITY PARTNERS
    ========================================================= */
@@ -1253,19 +1111,12 @@ opacity: 0.26;
 .community-title {
   margin-bottom: 19px;
 
-  color:
-    rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.8);
 
-  font-size:
-    clamp(
-      14px,
-      1.4vw,
-      18px
-    );
+  font-size: clamp(14px, 1.4vw, 18px);
 
   font-style: italic;
 }
-
 
 .community-logos {
   display: flex;
@@ -1277,7 +1128,6 @@ opacity: 0.26;
 
   width: 100%;
 }
-
 
 /* Individual partner */
 
@@ -1298,7 +1148,6 @@ opacity: 0.26;
     filter 160ms ease;
 }
 
-
 /* Actual SVG */
 
 .community-partner img {
@@ -1312,7 +1161,6 @@ opacity: 0.26;
   object-fit: contain;
 }
 
-
 /* Hover */
 
 .community-partner:hover {
@@ -1320,13 +1168,8 @@ opacity: 0.26;
 
   transform: translateY(-2px);
 
-  filter:
-    drop-shadow(
-      0 0 7px
-      rgba(255, 255, 255, 0.12)
-    );
+  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.12));
 }
-
 
 /* Dividers */
 
@@ -1336,15 +1179,13 @@ opacity: 0.26;
 
   flex: 0 0 auto;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(255, 255, 255, 0.14),
-      transparent
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.14),
+    transparent
+  );
 }
-
 
 .placeholder-logo {
   width: 35px;
@@ -1356,25 +1197,20 @@ opacity: 0.26;
 
   place-items: center;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
   border-radius: 50%;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.06),
-      rgba(0, 0, 0, 0.15)
-    );
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.15)
+  );
 
-  color:
-    rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.75);
 
   font-size: 12px;
 }
-
 
 .community-logo-divider {
   width: 1px;
@@ -1383,23 +1219,19 @@ opacity: 0.26;
 
   flex: 0 0 auto;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent,
-      rgba(66, 165, 255, 0.3),
-      transparent
-    );
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(66, 165, 255, 0.3),
+    transparent
+  );
 }
-
-
 
 /* =========================================================
    REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .profile-card {
     transition-duration: 0.01ms;
   }
@@ -1407,13 +1239,8 @@ opacity: 0.26;
   .back-logo-face {
     animation: none;
 
-    filter:
-      drop-shadow(
-        0 0 4px
-        rgba(66, 165, 255, 0.3)
-      );
+    filter: drop-shadow(0 0 4px rgba(66, 165, 255, 0.3));
   }
-
 }
 
 @keyframes cryptitaLightSweep {
@@ -1435,47 +1262,22 @@ opacity: 0.26;
   0%,
   20%,
   100% {
-    filter:
-      drop-shadow(
-        0 0 2px
-        rgba(66, 165, 255, 0.18)
-      );
+    filter: drop-shadow(0 0 2px rgba(66, 165, 255, 0.18));
   }
 
   40% {
-    filter:
-      drop-shadow(
-        0 0 5px
-        rgba(66, 165, 255, 0.45)
-      )
-      drop-shadow(
-        0 0 12px
-        rgba(66, 165, 255, 0.22)
-      );
+    filter: drop-shadow(0 0 5px rgba(66, 165, 255, 0.45))
+      drop-shadow(0 0 12px rgba(66, 165, 255, 0.22));
   }
 
   52% {
-    filter:
-      drop-shadow(
-        0 0 8px
-        rgba(110, 200, 255, 0.9)
-      )
-      drop-shadow(
-        0 0 18px
-        rgba(66, 165, 255, 0.5)
-      )
-      drop-shadow(
-        0 0 32px
-        rgba(66, 165, 255, 0.2)
-      );
+    filter: drop-shadow(0 0 8px rgba(110, 200, 255, 0.9))
+      drop-shadow(0 0 18px rgba(66, 165, 255, 0.5))
+      drop-shadow(0 0 32px rgba(66, 165, 255, 0.2));
   }
 
   68% {
-    filter:
-      drop-shadow(
-        0 0 4px
-        rgba(66, 165, 255, 0.32)
-      );
+    filter: drop-shadow(0 0 4px rgba(66, 165, 255, 0.32));
   }
 }
 
@@ -1488,7 +1290,11 @@ opacity: 0.26;
 }
 
 .profile-photo--placeholder {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(0, 0, 0, 0.2)
+  );
 }
 
 .card-status {

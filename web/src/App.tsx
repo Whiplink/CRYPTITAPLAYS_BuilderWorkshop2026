@@ -119,9 +119,10 @@ export default function App() {
       <MoltenMetal
         className="app-bg"
         image={campusImage}
-        primaryColor="#0A2A7A"
-        accentColor="#C8102E"
+        primaryColor="#075e63"
+        accentColor="#0f9d9a"
         lightColor="#FFFFFF"
+        mode="dark"
       />
       <Header ref={headerRef} />
       <main
